@@ -18,7 +18,7 @@ def _poetry_impl(ctx):
 
 
    ctx.file("requirements_lock.txt", result.stdout)
-   ctx.file("BUILD", "")
+   ctx.file("BUILD", 'exports_files(["requirements_lock.txt"])')
 
 poetry_lock = repository_rule(
    implementation = _poetry_impl,
